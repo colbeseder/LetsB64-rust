@@ -80,6 +80,6 @@ fn main() {
 	match action {
         "encode" | "e" => println!("{}", b64::encode(s)),
         "decode" | "d" => println!("{}", b64::decode(s)),
-		_ => println!("Command \"{}\" not recognized", action),
+		_ => eprintln!("Command \"{}\" not recognized", action),
     }
 }
