@@ -1,6 +1,6 @@
 # base64-rust
  
-Getting to know rust by impemementing base64 encode/decode command line tool.
+Getting to know Rust by impemementing base64 encode/decode command line tool.
 
 ### Commands
  - ***encode***, ***e*** : Base64 encode string
@@ -16,7 +16,7 @@ Usage
     
     ./letsB64 <COMMAND> <STRING>
 
-### examples
+### Examples
 
     $ ./letsB64 encode "Twas brillig, and the slithy toves"
     VHdhcyBicmlsbGlnLCBhbmQgdGhlIHNsaXRoeSB0b3Zlcw==
@@ -26,3 +26,8 @@ Usage
 
 	$ ./letsB64 e "Would you like a little more tea?" | xargs ./letsB64 d
 	Would you like a little more tea?
+
+### Tests
+
+    $ ./sanity.py
+    All tests passed!
