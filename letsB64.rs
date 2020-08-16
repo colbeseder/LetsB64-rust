@@ -1,4 +1,6 @@
 use std::env;
+use std::process;
+
 
 
 mod b64 {
@@ -23,6 +25,10 @@ mod b64 {
 
 	pub fn decode(input: &str) -> String { //Will panic if string is invalid length
 		let s = input.as_bytes();
+		if s.len() % 4 != 0 {
+			eprintln!("Invalid Base 64 encoded string - wrong length");
+			std::process::exit(1);
+		}
 	    let mut out_string = String::new();
 
 		let mut i: usize = 0;
@@ -74,12 +80,16 @@ mod b64 {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+	if args.len() < 3 {
+		eprintln!("Not enough arguments provided");
+		process::exit(1);
+	}
 	let action : &str = &args[1];
 	let s: &str = &args[2];
 	
 	match action {
         "encode" | "e" => println!("{}", b64::encode(s)),
         "decode" | "d" => println!("{}", b64::decode(s)),
-		_ => eprintln!("Command \"{}\" not recognized", action),
+		_ => { eprintln!("Command \"{}\" not recognized", action); process::exit(1); },
     }
 }
