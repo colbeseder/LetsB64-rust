@@ -1,0 +1,25 @@
+[
+    [["rustc", "letsB64.rs"], 0, "", "Compile"],
+    [["./letsB64"],           1, "", "No args"],
+    [["./letsB64", "e"],      1, "", "Not enough args"],
+    [["./letsB64", "f"],      1, "", "Command doesn't exist"],
+    [["./letsB64", "d", "a="],1, "", "Wrong length for decode"],
+
+    [["./letsB64", "encode", ""                         ], 0, "",                         "Encoding"],
+    [["./letsB64", "e",      ""                         ], 0, "",                         "Encoding"],
+    [["./letsB64", "e",      "a"                        ], 0, "YQ==",                     "Encoding"],
+    [["./letsB64", "e",      "be"                       ], 0, "YmU=",                     "Encoding"],
+    [["./letsB64", "e",      "see"                      ], 0, "c2Vl",                     "Encoding"],
+    [["./letsB64", "e",      "ddee"                     ], 0, "ZGRlZQ==",                 "Encoding"],
+    [["./letsB64", "e",      "welcome!"                 ], 0, "d2VsY29tZSE=",             "Encoding"],
+    [["./letsB64", "e",      "I'm feeling great"        ], 0, "SSdtIGZlZWxpbmcgZ3JlYXQ=", "Encoding"],
+
+    [["./letsB64", "decode", ""                         ], 0, "",                  "Decoding"],
+    [["./letsB64", "d",      ""                         ], 0, "",                  "Decoding"],
+    [["./letsB64", "d",      "YQ=="                     ], 0, "a",                 "Decoding"],
+    [["./letsB64", "d",      "YmU="                     ], 0, "be",                "Decoding"],
+    [["./letsB64", "d",      "c2Vl"                     ], 0, "see",               "Decoding"],
+    [["./letsB64", "d",      "ZGRlZQ=="                 ], 0, "ddee",              "Decoding"],
+    [["./letsB64", "d",      "d2VsY29tZSE="             ], 0, "welcome!",          "Decoding"],
+    [["./letsB64", "d",      "SSdtIGZlZWxpbmcgZ3JlYXQ=" ], 0, "I'm feeling great", "Decoding"]
+]
