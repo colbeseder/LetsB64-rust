@@ -15,5 +15,7 @@ jobs:
         profile: minimal
         toolchain: stable
         override: true
-    - run: python sanity.py
+    - run: rm letsB64 
+    - run: rustc letsB64.rs
+    - run: python test/sanity.py test/tests.json
 
