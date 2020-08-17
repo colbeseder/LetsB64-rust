@@ -1,3 +1,5 @@
+![Run tests](https://github.com/colbeseder/LetsB64-rust/workflows/Run%20tests/badge.svg?branch=master)
+
 # base64-rust
  
 Getting to know Rust by impemementing base64 encode/decode command line tool.
