@@ -1,5 +1,4 @@
 [
-    [["rustc", "letsB64.rs"], 0, "", "Compile"],
     [["./letsB64"],           1, "", "No args"],
     [["./letsB64", "e"],      1, "", "Not enough args"],
     [["./letsB64", "f"],      1, "", "Command doesn't exist"],

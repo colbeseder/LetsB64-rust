@@ -1,20 +1,20 @@
 name: Run tests
-# This workflow is triggered on pushes to the repository.
 on: [push]
 
 jobs:
   test:
-    # Job name is Greeting
     name: test1
-    # This job runs on Linux
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
-      - run: |
-        echo "hello world! ;-/"
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: prep Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: stable
+        override: true
+    - run: rustc letsB64.rs
+    - run: python test/sanity.py test/tests.json
 
