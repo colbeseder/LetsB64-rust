@@ -1,4 +1,4 @@
-![Run tests](https://github.com/colbeseder/LetsB64-rust/workflows/All%20Tests/badge.svg?branch=master)
+![All Tests](https://github.com/colbeseder/LetsB64-rust/workflows/All%20Tests/badge.svg?branch=master)
 
 # base64-rust
  
