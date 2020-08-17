@@ -15,6 +15,5 @@ jobs:
         profile: minimal
         toolchain: stable
         override: true
-    - run: echo "hello world! ;-/"
-    - run: ./sanity.py
+    - run: python sanity.py
 
