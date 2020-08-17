@@ -28,8 +28,3 @@ Usage
 
 	$ ./letsB64 e "Would you like a little more tea?" | xargs ./letsB64 d
 	Would you like a little more tea?
-
-### Tests
-
-    $ ./sanity.py
-    All tests passed!
